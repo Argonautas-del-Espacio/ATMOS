@@ -30,6 +30,6 @@ setup(
         'numba',
         'pandas',
         'astropy',
-        'wget'
+        'py3-wget'
         ]
     )

@@ -1,6 +1,7 @@
-import wget
+from py3_wget import download_file
 
-def wget_download(url,dir_file,desc=None):
+
+def wget_download(url, dir_file, desc=None):
     """
     Download files by wget command
 
@@ -8,14 +9,15 @@ def wget_download(url,dir_file,desc=None):
         url -> [str]
         dir_file -> [str] output filename or directory
     Parameters:
-        desc -> [str] description of the downloading   
+        desc -> [str] description of the downloading
     Outpits:
-        wget_out -> [str] path and filename where URL is downloaded to   
+        wget_out -> [str] path and filename where URL is downloaded to
 
     """
-    if desc: print(desc)
-    wget_out = wget.download(url,dir_file)
-    print()
-
-    return wget_out
-
+    download_file(
+        max_tries=100,  # Maximum number of retry attempts
+        retry_seconds=2,  # Initial retry delay in seconds
+        timeout_seconds=30,
+        output_path=dir_file,
+        overwrite=True,  # Overwrite existing file
+    )

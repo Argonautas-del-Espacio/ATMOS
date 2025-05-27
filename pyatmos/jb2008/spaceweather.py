@@ -50,8 +50,8 @@ def download_sw_jb2008(direc=None):
             desc2 = "Updating the Space weather data '{:s}' from Space Environment Technologies(SET)".format('DTCFILE.TXT')
             wget_download(url1,swfile1,desc1)
             wget_download(url2,swfile2,desc2)
-        else:
-            print("The Space Weather files '{:s}' and '{:s}' in {:s} are already the latest.".format('SOLFSMY.TXT','DTCFILE.TXT',direc))   
+        # else:
+        #     print("The Space Weather files '{:s}' and '{:s}' in {:s} are already the latest.".format('SOLFSMY.TXT','DTCFILE.TXT',direc))   
     return [swfile1,swfile2]
  
 def read_sw_jb2008(swfile):

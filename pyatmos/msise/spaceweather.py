@@ -41,8 +41,8 @@ def download_sw_nrlmsise00(direc=None):
             remove(swfile)
             desc = "Updating the Space Weather file '{:s}' from CELESTRAK".format('SW-All.csv')
             wget_download(url,swfile,desc)  
-        else:
-            print("The Space Weather file '{:s}' in {:s} is already the latest.".format('SW-All.csv',direc))   
+        # else:
+        #     print("The Space Weather file '{:s}' in {:s} is already the latest.".format('SW-All.csv',direc))   
     return swfile
 
 def read_sw_nrlmsise00(swfile):

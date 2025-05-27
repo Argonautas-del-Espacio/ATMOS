@@ -40,8 +40,8 @@ def download_iers(out_days=7,dir_to=None):
             remove(dir_eop_file)
             desc = "Updating the EOP file '{:s}' from IERS".format(eop_file)
             wget_out = wget_download(url_eop,dir_eop_file,desc)
-        else:
-            print("The EOP file '{:s}' in {:s} is already the latest.".format(eop_file,dir_to)) 
+        # else:
+        #     print("The EOP file '{:s}' in {:s} is already the latest.".format(eop_file,dir_to)) 
 
     if not path.exists(dir_leapsecond_file):
         desc = "Downloading the latest Leap Second file '{:s}' from IERS".format(leapsecond_file)
@@ -52,7 +52,7 @@ def download_iers(out_days=7,dir_to=None):
             remove(dir_leapsecond_file)
             desc = "Updating the Leap Second file '{:s}' from IERS".format(leapsecond_file)
             wget_out = wget_download(url_leapsecond,dir_leapsecond_file,desc)
-        else:
-            print("The Leap Second file '{:s}' in {:s} is already the latest.".format(leapsecond_file,dir_to))        
+        # else:
+        #     print("The Leap Second file '{:s}' in {:s} is already the latest.".format(leapsecond_file,dir_to))        
 
     return dir_to,dir_eop_file,dir_leapsecond_file    
