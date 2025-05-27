@@ -98,13 +98,13 @@ def get_sw(sw_df,t_ymd,hour):
     >>> f107A,f107,ap,aph = get_sw(SW_OBS_PRE,t_ymd,hour)
     '''
 
-    ymds = sw_df['DATE']
+    # ymds = sw_df['DATE']
     j_, = np.where(sw_df['DATE'] == t_ymd)
     j = j_[0]
     f107A,f107,ap = sw_df.iloc[j]['F10.7_OBS_CENTER81'],sw_df.iloc[j+1]['F10.7_OBS'],sw_df.iloc[j]['AP_AVG']
     aph_tmp_b0 = sw_df.iloc[j]['AP1':'AP8']   
     i = int(np.floor_divide(hour,3))
-    ap_c = aph_tmp_b0[i]
+    # ap_c = aph_tmp_b0[i]
     aph_tmp_b1 = sw_df.iloc[j+1]['AP1':'AP8']
     aph_tmp_b2 = sw_df.iloc[j+2]['AP1':'AP8']
     aph_tmp_b3 = sw_df.iloc[j+3]['AP1':'AP8']
