@@ -18,7 +18,7 @@ def wget_download(url, dir_file, desc=None):
         url,
         max_tries=100,  # Maximum number of retry attempts
         retry_seconds=2,  # Initial retry delay in seconds
-        timeout_seconds=30,
+        timeout_seconds=300,
         output_path=dir_file,
         overwrite=True,  # Overwrite existing file
     )
