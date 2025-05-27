@@ -30,6 +30,6 @@ setup(
         'numba',
         'pandas',
         'astropy',
-        'py3-wget'
+        'tqdm'
         ]
     )
