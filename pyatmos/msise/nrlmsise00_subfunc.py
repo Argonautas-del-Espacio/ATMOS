@@ -1,13 +1,13 @@
 import numpy as np
 from scipy.interpolate import CubicSpline
 from scipy.special import lpmv
-import pkg_resources
+from importlib.resources import files
 
 def nrlmsis00_data():
     '''
     Read the data block from nrlmsis00_data.npz
     ''' 
-    data_path = pkg_resources.resource_filename('pyatmos', 'data/')
+    data_path = str(files('pyatmos').joinpath('data/'))
     data = np.load(data_path+'nrlmsis00_data.npz')
     pt,pd,ps,pdl = data['pt'],data['pd'],data['ps'],data['pdl']
     ptm,pdm,ptl,pma = data['ptm'],data['pdm'],data['ptl'],data['pma']
