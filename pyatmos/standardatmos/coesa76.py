@@ -6,7 +6,7 @@ Atmosphere(COESA 1976) agreed to extend it to 1000 km.
 '''
 
 import numpy as np
-from pkg_resources import resource_filename
+from importlib.resources import files
 
 from  .ussa76 import ussa76
 from ..utils import Const
@@ -41,7 +41,7 @@ def coesa76(alts, alt_type='geometric'):
     zb = np.array([86, 91, 100, 110, 120, 150, 200, 300, 500, 750, np.inf])
 
     # load the coefficients used to approximate density and pressure above 86km 
-    data_path = resource_filename('pyatmos', 'data/')
+    data_path = str(files('pyatmos').joinpath('data/'))
     data = np.load(data_path+'coesa76_coeffs.npz')
     rho_coeffs,p_coeffs = data['rho'],data['p']
 
